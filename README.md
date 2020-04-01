@@ -1,5 +1,7 @@
 # pyPackageEx
-This example package demonstrates how and why to make a Python package out of individual modules (```.py``` files). See [the lesson](lib/lesson.md).
+This example package demonstrates how to make a Python package out of individual modules (```.py``` files).
+
+[See the lesson](lib/lesson.md).
 
 ## Installation
 ```
@@ -24,4 +26,4 @@ manSet = ppe.mandelbrot(z)
 plotUtils.plot(manSet, extent=extent, cmap='bone')
 ```
 Output:
-!["Mandelbrot Set"](lib/dummy.png)
+!["Mandelbrot Set"](lib/mandelbrotSet.png)
