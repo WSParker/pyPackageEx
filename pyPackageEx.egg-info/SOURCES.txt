@@ -1,0 +1,12 @@
+README.md
+setup.py
+pyPackageEx/__init__.py
+pyPackageEx.egg-info/PKG-INFO
+pyPackageEx.egg-info/SOURCES.txt
+pyPackageEx.egg-info/dependency_links.txt
+pyPackageEx.egg-info/top_level.txt
+pyPackageEx/mandelbrot/__init__.py
+pyPackageEx/mandelbrot/julia.py
+pyPackageEx/mandelbrot/mandelbrot.py
+pyPackageEx/plotting/__init__.py
+pyPackageEx/plotting/plotUtils.py
