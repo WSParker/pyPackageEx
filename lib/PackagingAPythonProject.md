@@ -139,7 +139,7 @@ setup(
     long_description = open('README.md').read(),
     long_description_content_type = "text/markdown",
     python_requires='>=3.6',
-    install_requires=['numpy','matplotlib.pyplot']
+    install_requires=['numpy','matplotlib']
 )
 ```
 `find_packages()` looks for `__init__.py` files. Make sure the name matches the name of the package, and the url matches the url of the repository (particularly if publishing to PyPI).
