@@ -1,4 +1,4 @@
-import numpy as np
+from numpy import abs, zeros_like
 
 def mandelbrot(c, max_iter=50, div_lim=2):
     """
@@ -6,11 +6,11 @@ def mandelbrot(c, max_iter=50, div_lim=2):
     """
     f = 0j
     n = 0
-    out = np.zeros_like(c,dtype=int)
+    out = zeros_like(c,dtype=int)
     while n < max_iter:
         n += 1
         f = func(f,c)
-        out[(out == 0) & (np.abs(f) > div_lim)] = n
+        out[(out == 0) & (abs(f) > div_lim)] = n
         f[(out != 0)] = 100
     return(out)
 
