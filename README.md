@@ -1,5 +1,5 @@
 # pyPackageEx
-This example package demonstrates how and why to make a Python package out of individual modules (```.py``` files). See [the lesson](lesson.md).
+This example package demonstrates how and why to make a Python package out of individual modules (```.py``` files). See [the lesson](lib/lesson.md).
 
 ## Installation
 ```
