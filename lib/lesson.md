@@ -1,19 +1,20 @@
+# Packaging a Python project
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
 - [Why create a package?](#why-create-a-package)
 - [Goal](#goal)
 - [Components of a package](#components-of-a-package)
-  - [`__init__.py`](#__init__py)
-  - [`setup.py`](#setuppy)
-  - [`.gitignore`](#gitignore)
-  - [`LICENSE`](#license)
-  - [`README.md`](#readmemd)
+    - [`__init__.py`](#__init__py)
+    - [`setup.py`](#setuppy)
+    - [`.gitignore`](#gitignore)
+    - [`LICENSE`](#license)
+    - [`README.md`](#readmemd)
 - [Further Reading](#further-reading)
 
 <!-- /code_chunk_output -->
-# Why create a package?
+## Why create a package?
 
 The obvious answer is, create a package if you want to publish code to the Python Package Index (PyPI) (i.e., let users install via `pip install`).
 
@@ -23,7 +24,7 @@ However, even if you're writing code only for yourself or for a small group, the
 * Packaging your code forces it to be simple and organized, even for large projects with lots of functionality.
 * The code you write is a part of your portfolio. Potential employers will look at your GitHub, and neat packages look better than a mess of `.py`'s, notebooks, and miscellaneous files.
 
-# Goal
+## Goal
 
 We have two files - `manSetGen.py` and `plotUtils.py` - that contain code to generate Mandelbrot sets and plot them, respectively. We want to upload them to GitHub so that a user can run this install:
 
@@ -44,7 +45,7 @@ Note: once you have a package it's [easy to publish to PyPI](https://packaging.P
 pip install pyPackageEx
 ```
 
-# Components of a package
+## Components of a package
 The structure of this folder is as follows:
 ```
 pyPackageEx/                       Repository containing the package
@@ -59,19 +60,19 @@ pyPackageEx/                       Repository containing the package
      setup.py
 ```
 
-This is close to the minimal structure of a Python package, with a subpackage (the .gitignore is extra, see [below](#gitignore)).
+This is close to the minimal structure of a Python package, with a subpackage (the .gitignore is extra, see [below](##gitignore)).
 
 The versatility of packages comes from the `__init__.py` file. It behaves in packages a bit like the `__init__` method of Python classes - it defines elements and attributes of the package.
 
 Below are the key components of a Python package.
 
-## `__init__.py`
+#### `__init__.py`
 
 The existence of an `__init__.py` tells Python the enclosing folder is a package. So, this repository has one package `pyPackageEx` (containing two modules) and one subpackage `pyPackageEx.coords`. In addition, `__init__.py` is run every time the package is imported, so it can include code to initialize the package.
 
 In `pyPackageEx/__init__.py`, we have:
 ```Python
-## myPackageEx/__init__.py
+#### myPackageEx/__init__.py
 from .manSetGen import *
 ```
 This means when we run
@@ -93,7 +94,7 @@ where `plot()` is a function defined in `plotUtils.py`.
 
 Lastly, we have `pyPackageEx/coords/__init__.py`:
 ```Python
-## myPackageEx/coords/__init__.py
+#### myPackageEx/coords/__init__.py
 from numpy import linspace, meshgrid
 
 def cp(xmin = -1.5, xmax = 1.5, xres = 2**10,
@@ -118,10 +119,10 @@ Second, you have flexibility with intra-package references. For example, in one 
 
 If you have something you want to do within a package, and it isn't explained here, it might be explained in one of these:
 
-[The Python docs](https://docs.Python.org/3/tutorial/modules.html#packages)
+[The Python docs](https://docs.Python.org/3/tutorial/modules.html##packages)
 ["How to create a Python Package with \_\_init\_\_.py" by Timothy Bramlett](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html)
 
-## `setup.py`
+#### `setup.py`
 
 This is more straightforward. The file included in this repository reads:
 ```Python
@@ -143,13 +144,13 @@ setup(
 ```
 `find_packages()` looks for `__init__.py` files. Make sure the name matches the name of the package, and the url matches the url of the repository (particularly if publishing to PyPI).
 
-## `.gitignore`
+#### `.gitignore`
 This tells git what to ignore when you upload your project; typically, generated files such as `__pycache__` go in the `.gitignore`. For more see [the documentation](https://git-scm.com/docs/gitignore).
 
-## `LICENSE`
+#### `LICENSE`
 This tells users what they can and cannot do with your package. The most common are GNU and MIT, with MIT allowing users to create closed-source code from your package, and GNU not. More info [here](https://choosealicense.com/).
 
-## `README.md`
+#### `README.md`
 The `README` is the first thing someone sees when they look at your package. It should contain
 * a **concise** explanation of your package's purpose
 * installation instructions
@@ -157,9 +158,9 @@ The `README` is the first thing someone sees when they look at your package. It 
 
 After that, there's room to include demos, extended usage, etc as you feel necessary.
 
-# Further Reading
+## Further Reading
 More on `__init__.py`
-* [The Python docs](https://docs.Python.org/3/tutorial/modules.html#packages)
+* [The Python docs](https://docs.Python.org/3/tutorial/modules.html##packages)
 * ["How to create a Python Package with \_\_init\_\_.py" by Timothy Bramlett](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html)
 
 More on package structure
