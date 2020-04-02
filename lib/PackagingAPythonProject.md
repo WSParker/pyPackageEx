@@ -120,8 +120,9 @@ Second, you have flexibility with intra-package references. For example, in one 
 
 If you have something you want to do within a package, and it isn't explained here, it might be explained in one of these:
 
-[The Python docs](https://docs.Python.org/3/tutorial/modules.html##packages)
-["How to create a Python Package with \_\_init\_\_.py" by Timothy Bramlett](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html)
+* [The Python docs](https://docs.Python.org/3/tutorial/modules.html##packages)
+
+* ["How to create a Python Package with \_\_init\_\_.py" by Timothy Bramlett](https://timothybramlett.com/How_to_create_a_Python_Package_with___init__py.html)
 
 #### `setup.py`
 
