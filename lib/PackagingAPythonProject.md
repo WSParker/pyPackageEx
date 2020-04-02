@@ -85,13 +85,13 @@ import pyPackageEx
 pyPackageEx.mandelbrot(z)
 ```
 
-However, because we don't explicitly import anything from `plotUtils.py`, `pyPackageEx` does not inherit any of its attributes. Thus, the following line is not valid:
+However, because we don't explicitly import anything from `plotUtils.py`, `pyPackageEx` does not inherit any of its attributes. Thus, if `plot()` is a function defined within `plotUtils.py`, we would need to run:
 ```Python
-pyPackageEx.plot(manSet)
+from pyPackageEx import plotUtils
+plotUtils.plot(manSet)
 ```
-where `plot()` is a function defined in `plotUtils.py`.
 
-**Note**: the import syntax is slightly different in packages. A single dot indicates the current package, two represents the parent package.
+**Note**: intra-package import syntax is slightly different. A single dot indicates the current package, two represents the parent package.
 
 Lastly, we have `pyPackageEx/coords/__init__.py`:
 ```Python
@@ -106,7 +106,7 @@ def cp(xmin = -1.5, xmax = 1.5, xres = 2**10,
     z = x + 1j*y
     return(z)
 ```
-Here we used the `__init__.py` file to directly define attributes of the package, so that we can run:
+Here we used the `__init__.py` file to directly define attributes of the package (`linspace`, `meshgrid`, and `cp`), so that we can run:
 ```Python
 from pyPackageEx import coords
 z = coords.cp()
@@ -144,7 +144,11 @@ setup(
     install_requires=['numpy','matplotlib']
 )
 ```
-`find_packages()` looks for `__init__.py` files. Make sure the name matches the name of the package, and the url matches the url of the repository (particularly if publishing to PyPI).
+`find_packages()` looks for `__init__.py` files. Make sure `name` matches the name of the package, and `url` matches the url of the repository (particularly if publishing to PyPI).
+
+Running `python setup.py develop` creates a link from your package library to the source code of the package. Any changes to the source code are reflected immediately.
+
+Conversely, you can let `pip`, a package manager, install the package. This copies the source code directly into your package library, so changes to the original are not reflected unless you reinstall. However, using `pip` has some advantages such as automatically installing dependencies, and keeping track of metadata to let you upgrade easily. More advantages of using `pip` [here](http://naoko.github.io/your-project-install-pip-setup/) and [here](https://stackoverflow.com/questions/15724093/difference-between-python-setup-py-install-and-pip-install).
 
 #### `.gitignore`
 This tells git what to ignore when you upload your project; typically, generated files such as `__pycache__` go in the `.gitignore`. For more see [the documentation](https://git-scm.com/docs/gitignore).
@@ -156,9 +160,9 @@ This tells users what they can and cannot do with your package. The most common 
 The `README` is the first thing someone sees when they look at your package. It should contain
 * a **concise** explanation of your package's purpose
 * installation instructions
-* basic usage instructions.
+* basic usage instructions
 
-After that, there's room to include demos, extended usage, etc as you feel necessary.
+After that, there's room to include demos, extended usage, etc. as you feel necessary.
 
 ## Further Reading
 More on `__init__.py`
