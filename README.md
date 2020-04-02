@@ -9,7 +9,7 @@ git clone https://github.com/WSParker/pyPackageEx
 cd pyPackageEx
 python setup.py develop
 ```
-Run `python setup.py develop` if you plan to edit this module, otherwise run `python setup.py install`.
+Run `python setup.py develop` if you plan to edit this module, otherwise run `pip install ./`.
 
 ## Usage
 Basically all this package can do is generate Mandelbrot sets and plot them.
@@ -23,7 +23,7 @@ z = coords.cp(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax)
 extent = [xmin,xmax,ymin,ymax]
 
 manSet = ppe.mandelbrot(z)
-plotUtils.plot(manSet, extent=extent, fname='lib/mandelbrotSet.png', cmap='bone')
+plotUtils.plot(manSet, extent=extent, fname='mandelbrotSet.png', cmap='bone')
 ```
-Output:
+Output: `mandelbrotSet.png`
 !["Mandelbrot Set"](lib/mandelbrotSet.png)
