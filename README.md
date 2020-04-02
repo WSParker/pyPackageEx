@@ -7,9 +7,9 @@ This example package demonstrates how to make a Python package out of individual
 ```
 git clone https://github.com/WSParker/pyPackageEx
 cd pyPackageEx
-pip install ./
+pip install .
 ```
-If you plan to edit this module, run `python setup.py develop` instead of `pip install ./`.
+If you plan to edit this module, run `python setup.py develop` instead of `pip install .`.
 
 ## Usage
 Basically all this package can do is generate Mandelbrot sets and plot them.
