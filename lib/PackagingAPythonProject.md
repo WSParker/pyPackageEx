@@ -55,6 +55,7 @@ pyPackageEx/                       Repository containing the package
           plotUtils.py             A helper module
           coords/                  A subpackage
                __init__.py
+     LICENSE
      .gitignore
      README.md
      setup.py

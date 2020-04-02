@@ -23,7 +23,7 @@ z = coords.cp(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax)
 extent = [xmin,xmax,ymin,ymax]
 
 manSet = ppe.mandelbrot(z)
-plotUtils.plot(manSet, extent=extent, cmap='bone')
+plotUtils.plot(manSet, extent=extent, fname='lib/mandelbrotSet.png', cmap='bone')
 ```
 Output:
 !["Mandelbrot Set"](lib/mandelbrotSet.png)
