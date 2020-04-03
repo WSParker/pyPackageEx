@@ -5,12 +5,13 @@
 
 - [Why create a package?](#why-create-a-package)
 - [Goal](#goal)
-- [Components of a package](#components-of-a-package)
+- [Core components of a package](#core-components-of-a-package)
     - [`__init__.py`](#__init__py)
     - [`setup.py`](#setuppy)
     - [`.gitignore`](#gitignore)
     - [`LICENSE`](#license)
     - [`README.md`](#readmemd)
+    - [](#)
 - [Further Reading](#further-reading)
 
 <!-- /code_chunk_output -->
@@ -45,7 +46,7 @@ Note: once you have a package it's [easy to publish to PyPI](https://packaging.P
 pip install pyPackageEx
 ```
 
-## Components of a package
+## Core components of a package
 The structure of this folder is as follows:
 ```
 pyPackageEx/                       Repository containing the package
@@ -69,9 +70,9 @@ Below are the key components of a Python package.
 
 #### `__init__.py`
 
-The existence of an `__init__.py` tells Python the enclosing folder is a package. So, this repository has one package `pyPackageEx` (containing two modules) and one subpackage `pyPackageEx.coords`. In addition, `__init__.py` is run every time the package is imported, so it can include code to initialize the package.
+The existence of an `__init__.py` tells Python the enclosing folder is a package. So, this repository has one package `pyPackageEx` (containing two modules) and one subpackage `pyPackageEx.coords`. `__init__.py` is run every time the package is imported, so it can include code to initialize the package.
 
-In `pyPackageEx/__init__.py`, we have:
+For example, in `pyPackageEx/__init__.py`, we have:
 ```Python
 #### myPackageEx/__init__.py
 from .manSetGen import *
@@ -89,6 +90,8 @@ However, because we don't explicitly import anything from `plotUtils.py`, `pyPac
 ```Python
 from pyPackageEx import plotUtils
 plotUtils.plot(manSet)
+# import pyPackageEx.plotUtils          Also works
+# pyPackageEx.plotUtils.plot(manSet)
 ```
 
 **Note**: intra-package import syntax is slightly different. A single dot indicates the current package, two represents the parent package.
@@ -118,7 +121,7 @@ First, you can be explicit about how much of the package gets imported with each
 
 Second, you have flexibility with intra-package references. For example, in one of my packages I define physical constants in the main package's `__init__.py`, and I use them throughout the rest of the package.
 
-If you have something you want to do within a package, and it isn't explained here, it might be explained in one of these:
+If you have something you want to do within a package, and it isn't explained here, it's probably explained in one of these:
 
 * [The Python docs](https://docs.Python.org/3/tutorial/modules.html##packages)
 
@@ -146,9 +149,9 @@ setup(
 ```
 `find_packages()` looks for `__init__.py` files. Make sure `name` matches the name of the package, and `url` matches the url of the repository (particularly if publishing to PyPI).
 
-Running `python setup.py develop` creates a link from your package library to the source code of the package. Any changes to the source code are reflected immediately.
+Running `python setup.py develop` creates a link from your Python package library to the source code of the package. Any changes to the source code are reflected immediately.
 
-Conversely, if you're not planning on editing your package further, you can let `pip` - a package manager - install the package. This copies the source code directly into your package library, so changes to the original are not reflected unless you reinstall. However, using `pip` has some advantages such as automatically installing dependencies, and keeping track of metadata to let you upgrade easily. More advantages of using `pip` [here](http://naoko.github.io/your-project-install-pip-setup/) and [here](https://stackoverflow.com/questions/15724093/difference-between-python-setup-py-install-and-pip-install).
+Conversely, if you're not planning to edit your package further, you can let `pip` - a package manager - install the package (see the [README](../README.md)). This copies the source code directly into your package library, so changes to the original are not reflected unless you reinstall. However, using `pip` has some advantages such as automatically installing dependencies, and keeping track of metadata to let you upgrade easily. More advantages of using `pip` [here](http://naoko.github.io/your-project-install-pip-setup/) and [here](https://stackoverflow.com/questions/15724093/difference-between-python-setup-py-install-and-pip-install).
 
 #### `.gitignore`
 This tells git what to ignore when you upload your project; typically, generated files such as `__pycache__` go in the `.gitignore`. For more see [the documentation](https://git-scm.com/docs/gitignore).
@@ -163,6 +166,8 @@ The `README` is the first thing someone sees when they look at your package. It 
 * basic usage instructions
 
 After that, there's room to include demos, extended usage, etc. as you feel necessary.
+
+####
 
 ## Further Reading
 More on `__init__.py`
