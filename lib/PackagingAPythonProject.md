@@ -31,7 +31,7 @@ We have two files - `manSetGen.py` and `plotUtils.py` - that contain code to gen
 ```Bash
 git clone https://github.com/WSParker/pyPackageEx
 cd pyPackageEx
-python setup.py develop
+pip install .
 ```
 and these imports:
 
@@ -148,7 +148,7 @@ setup(
 
 Running `python setup.py develop` creates a link from your package library to the source code of the package. Any changes to the source code are reflected immediately.
 
-Conversely, you can let `pip`, a package manager, install the package. This copies the source code directly into your package library, so changes to the original are not reflected unless you reinstall. However, using `pip` has some advantages such as automatically installing dependencies, and keeping track of metadata to let you upgrade easily. More advantages of using `pip` [here](http://naoko.github.io/your-project-install-pip-setup/) and [here](https://stackoverflow.com/questions/15724093/difference-between-python-setup-py-install-and-pip-install).
+Conversely, if you're not planning on editing your package further, you can let `pip` - a package manager - install the package. This copies the source code directly into your package library, so changes to the original are not reflected unless you reinstall. However, using `pip` has some advantages such as automatically installing dependencies, and keeping track of metadata to let you upgrade easily. More advantages of using `pip` [here](http://naoko.github.io/your-project-install-pip-setup/) and [here](https://stackoverflow.com/questions/15724093/difference-between-python-setup-py-install-and-pip-install).
 
 #### `.gitignore`
 This tells git what to ignore when you upload your project; typically, generated files such as `__pycache__` go in the `.gitignore`. For more see [the documentation](https://git-scm.com/docs/gitignore).
