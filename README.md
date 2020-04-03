@@ -1,19 +1,25 @@
 # pyPackageEx
-This example package demonstrates how to make a Python package out of individual modules (```.py``` files).
+This repository is a simple example of how to package a Python project. 
 
 [See the lesson](lib/PackagingAPythonProject.md).
 
 ## Installation
+
+`pyPackageEx` can be installed via command line using [`pip`](https://pip.pypa.io/en/stable/installing/):
+```Bash
+$ pip install git+https://github.com/WSParker/pyPackageEx
 ```
-git clone https://github.com/WSParker/pyPackageEx
-cd pyPackageEx
-pip install .
+If you plan to edit this package, you can run:
+```Bash
+$ git clone https://github.com/WSParker/pyPackageEx
+$ cd pyPackageEx
+$ python setup.py develop
 ```
-If you plan to edit this module, run `python setup.py develop` instead of `pip install .`.
+so that changes to your local copy are reflected immediately.
 
 ## Usage
 Basically all this package can do is generate Mandelbrot sets and plot them.
-```
+```Python
 import pyPackageEx as ppe
 from pyPackageEx import plotUtils
 from pyPackageEx import coords
