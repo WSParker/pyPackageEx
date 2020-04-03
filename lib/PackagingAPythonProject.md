@@ -62,9 +62,11 @@ pyPackageEx/                       Repository containing the package
 
 This is close to the minimal structure of a Python package, with a subpackage.
 
-The versatility of packages comes from the `__init__.py` file. It behaves in packages a bit like the `__init__` method of Python classes - it defines the elements and attributes of the package.
+The versatility of packages comes from the `__init__.py` file. It behaves in packages a bit like the `__init__` method of Python classes. It initializes the elements and attributes of the package, and thus defines the structure of the package.
 
-Below are the key components of a Python package.
+The other elements in the repository - `LICENSE`, `.gitignore`, `README.md`, `setup.py` - don't affect the functionality of the package, but should be distributed alongside the package.
+
+Let's take a look at each element specifically.
 
 #### `__init__.py`
 
