@@ -1,5 +1,5 @@
 # pyPackageEx
-This repository is a simple example of how to package a Python project. 
+This repository is a simple example of how to package a Python project.
 
 [See the lesson](lib/PackagingAPythonProject.md).
 
@@ -9,7 +9,7 @@ This repository is a simple example of how to package a Python project.
 ```Bash
 $ pip install git+https://github.com/WSParker/pyPackageEx
 ```
-If you plan to edit this package, you can run:
+If you plan to locally edit this package, you can run:
 ```Bash
 $ git clone https://github.com/WSParker/pyPackageEx
 $ cd pyPackageEx
