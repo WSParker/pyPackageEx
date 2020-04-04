@@ -7,13 +7,13 @@ This repository is a simple example of how to package a Python project.
 
 Install via command line using [`pip`](https://pip.pypa.io/en/stable/installing/):
 ```Bash
-$ pip install git+https://github.com/WSParker/pyPackageEx
+pip install git+https://github.com/WSParker/pyPackageEx
 ```
 If you plan to locally edit this package, you can run:
 ```Bash
-$ git clone https://github.com/WSParker/pyPackageEx
-$ cd pyPackageEx
-$ python setup.py develop
+git clone https://github.com/WSParker/pyPackageEx
+cd pyPackageEx
+python setup.py develop
 ```
 so that changes to your local copy are reflected immediately.
 

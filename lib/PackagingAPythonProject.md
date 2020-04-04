@@ -30,7 +30,7 @@ However, even if you're writing code only for yourself or for a small group, the
 We have two files - `manSetGen.py` and `plotUtils.py` - that contain code to generate Mandelbrot sets and plot them, respectively. We want to upload them to GitHub so that a user can run this install:
 
 ```Bash
-$ pip install git+https://github.com/WSParker/pyPackageEx
+pip install git+https://github.com/WSParker/pyPackageEx
 ```
 and these imports:
 
@@ -41,7 +41,7 @@ from pyPackageEx import plotUtils
 
 Note: once you have a package it's [easy to publish to PyPI](https://packaging.Python.org/tutorials/packaging-projects/), and if you choose to do so then installation becomes
 ```Bash
-$ pip install pyPackageEx
+pip install pyPackageEx
 ```
 
 ## Core components of a package
