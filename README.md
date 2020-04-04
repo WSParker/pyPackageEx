@@ -1,7 +1,7 @@
 # pyPackageEx
 This repository is a simple example of how to package a Python project.
 
-[See the lesson](lib/PackagingAPythonProject.md).
+[See the lesson](assets/PackagingAPythonProject.md).
 
 ## Installation
 
@@ -32,4 +32,4 @@ manSet = ppe.mandelbrot(z)
 plotUtils.plot(manSet, extent=extent, fname='mandelbrotSet.png', cmap='bone')
 ```
 Output: `mandelbrotSet.png`
-!["Mandelbrot Set"](lib/mandelbrotSet.png)
+!["Mandelbrot Set"](assets/mandelbrotSet.png)
