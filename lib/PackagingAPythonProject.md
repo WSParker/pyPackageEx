@@ -45,7 +45,7 @@ pip install pyPackageEx
 ```
 
 ## Core components of a package
-The structure of this repository is as follows:
+This repository is structured as follows:
 ```
 pyPackageEx/                       Repository containing the package
      pyPackageEx/                  The package
