@@ -1,6 +1,6 @@
 # pyPackageEx
 
-[![Build Status](https://travis-ci.com/WSParker/pyPackageEx.svg?branch=master)](https://travis-ci.com/WSParker/pyPackageEx)
+[![Travis](https://travis-ci.com/WSParker/pyPackageEx.svg?branch=master)](https://travis-ci.com/WSParker/pyPackageEx)
 
 This repository is a simple example of how to package a Python project.
 
